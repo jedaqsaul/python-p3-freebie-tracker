@@ -22,8 +22,11 @@ def list_devs():
         print(f"{dev.id}: {dev.name}")
     print_line()
 
+def list_companies():
+    companies=session.query(Company).all()
+    print_line()
+    for company in companies:
+        print(f"{company.id} : {company.name} (Founded {company.founding_year})")
+    print_line()
 
-
-
-
-
+    
