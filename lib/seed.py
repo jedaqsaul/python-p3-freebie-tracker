@@ -31,5 +31,5 @@ def seed_data():
     session.add_all([c1,c2,d1,d2])
     session.commit() #commit to generate ids for foreign keys
 
-    # create freebies liked w
+    #
 
