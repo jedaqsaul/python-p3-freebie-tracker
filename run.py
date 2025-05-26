@@ -56,9 +56,29 @@ def show_developer_freebies():
     print(f"Freebies for {dev.name}:")
     for freebie in dev.freebies:
         print(f"- {freebie.item_name} from {freebie.company.name} (Worth: ${freebie.value})")
+def add_dev():
+    name = input("Enter the developer's name: ")
+
+    if not name.strip():
+        print("Name cannot be empty.")
+        return
+
+    try:
+        dev = Dev(name=name)
+        session.add(dev)
+        session.commit()
+        printMessage("Developer added successfully!")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        session.rollback()
+
     
        
 
+def printMessage(message):
+    print(
+        f"\n-----------------------------------------------\n{message}\n------------------------------------------------"
+    )
 
 
 def main():
@@ -67,6 +87,8 @@ def main():
     "2": list_companies,
     "3": list_freebies,
     "4": show_developer_freebies, 
+    "5": add_dev, 
+
 }
 
     while True:
@@ -75,6 +97,7 @@ def main():
         print("2. List all companies")
         print("3. List all freebies")
         print("4. Show all freebies for a developer")
+        print("5. Add a new developer")
         print("0. Exit")
         
         choice=input("Select and option: ")
