@@ -30,3 +30,20 @@ def list_companies():
     print_line()
 
     
+
+def list_freebies():
+    freebies = session.query(Freebie).all()
+    print_line()
+    for freebie in freebies:
+        print(f"{freebie.item_name} (worth ${freebie.value})")
+        print(f" - Given by: {freebie.company.name}")
+        print(f" - Received by: {freebie.dev.name}")
+        print_line()
+
+
+
+
+
+
+
+
