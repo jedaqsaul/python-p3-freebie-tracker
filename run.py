@@ -42,7 +42,32 @@ def list_freebies():
 
 
 
+def main():
+    while True:
+        print("\nFREEBIE TRACKER CLI")
+        print("1. List all developers")
+        print("2. List all companies")
+        print("3. List all freebies")
 
+        print("0. Exit")
+        
+        choice=input("Select and option: ")
+
+        if choice == "1":
+            list_devs()
+        elif choice == "2":
+            list_companies()
+        elif choice == "3":
+            list_freebies()
+        elif choice == "0":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid option. Try again.")
+
+if __name__ == "__main__":
+    main()
+        
 
 
 
