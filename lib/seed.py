@@ -37,3 +37,11 @@ def seed_data():
     f2 =Freebie(item_name='T-shirt', value=20, company_id=c2.id, dev_id=d2.id)
     f3 =Freebie(item_name='Mug', value=10, company_id=c1.id, dev_id=d2.id)
 
+    # add freebies and commit
+    session.add_all([f1,f2,f3])
+    session.commit()
+
+    print("Seed data added successfully!")
+
+if __name__ =="__main__":
+    seed_data()
