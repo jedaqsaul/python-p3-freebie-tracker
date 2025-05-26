@@ -3,10 +3,12 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-from models import Company, Dev, Freebie
+from models import Company, Dev, Freebie, Base
 
 # Create engine and session
 engine = create_engine("sqlite:///freebies.db")
+Base.metadata.create_all(engine)
+
 Session = sessionmaker(bind=engine)
 session = Session()
 
