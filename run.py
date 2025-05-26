@@ -72,6 +72,27 @@ def add_dev():
         print(f"An error occurred: {e}")
         session.rollback()
 
+def add_company():
+    name = input("Enter company name: ")
+    founding_year = input("Enter founding year: ")
+
+    if not founding_year.isdigit():
+        printMessage("Founding year must be a number.")
+        return
+
+    try:
+        company = Company(
+            name=name,
+            founding_year=int(founding_year)
+        )
+        session.add(company)
+        session.commit()
+        printMessage("Company added successfully!")
+    except Exception as e:
+        printMessage(f"Error occurred: {e}")
+        session.rollback()
+
+
     
        
 
@@ -88,6 +109,8 @@ def main():
     "3": list_freebies,
     "4": show_developer_freebies, 
     "5": add_dev, 
+    "6": add_company,
+
 
 }
 
@@ -98,6 +121,8 @@ def main():
         print("3. List all freebies")
         print("4. Show all freebies for a developer")
         print("5. Add a new developer")
+        print("6. Add a new company")
+
         print("0. Exit")
         
         choice=input("Select and option: ")
