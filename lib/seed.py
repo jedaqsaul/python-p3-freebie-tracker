@@ -31,5 +31,9 @@ def seed_data():
     session.add_all([c1,c2,d1,d2])
     session.commit() #commit to generate ids for foreign keys
 
-    #
+    #create freebies linked to companies and devs
+
+    f1 =Freebie(item_name='Sticker Pack', value=0, company_id=c1.id, dev_id=d1.id)
+    f2 =Freebie(item_name='T-shirt', value=20, company_id=c2.id, dev_id=d2.id)
+    f3 =Freebie(item_name='Mug', value=10, company_id=c1.id, dev_id=d2.id)
 
