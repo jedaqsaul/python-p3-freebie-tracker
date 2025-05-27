@@ -34,6 +34,8 @@ class Dev(Base):
 
     def __repr__(self):
         return f'<Dev {self.name}>'
+    
+    
 class Freebie(Base):
     __tablename__='freebies'
     id =Column(Integer, primary_key=True)
