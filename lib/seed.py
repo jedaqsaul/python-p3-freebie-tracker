@@ -3,11 +3,11 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-from models import Company, Dev, Freebie, Base
+from models import Company, Dev, Freebie
 
 # Create engine and session
-engine = create_engine("sqlite:///freebies.db")
-Base.metadata.create_all(engine)
+engine = create_engine("sqlite:///freebies.db", echo=False)
+# Base.metadata.create_all(engine)
 
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -35,6 +35,10 @@ def seed_data():
     session.commit()
 
     print("Seed data added successfully!")
+
+
+
+
 
 if __name__ == "__main__":
     seed_data()
