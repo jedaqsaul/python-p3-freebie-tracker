@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from sqlalchemy import create_engine
-from seed import engine,session
+
 
 from models import Company, Dev,Freebie
 
