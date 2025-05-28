@@ -32,6 +32,13 @@ class Dev(Base):
     # relationships
     freebies=relationship("Freebie", back_populates="dev")
 
+    companies=relationship(
+        "Company",
+        secondary="freebies",
+        back_populates="devs",
+        viewonly=True
+    )
+
     def __repr__(self):
         return f'<Dev {self.name}>'
     
