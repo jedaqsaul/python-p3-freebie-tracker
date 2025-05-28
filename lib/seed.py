@@ -34,7 +34,7 @@ def seed_data():
     session.add_all([f1, f2, f3])
     session.commit()
 
-    print("Seed data added successfully!")
+    print("Seed data added successfully! 🌱")
 
 
 

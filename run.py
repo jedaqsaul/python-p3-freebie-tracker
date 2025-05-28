@@ -328,7 +328,9 @@ def main():
         choice=input("Select and option: ")
 
         if choice == "0":
-            print("Goodbye!")
+            print(
+                "-----------------------------------------------\nThank you for visiting us. Welcome again!\n------------------------------------------------"
+            )
             break
         action=cli_actions.get(choice)
 
@@ -336,6 +338,7 @@ def main():
             action()
         else:
             print("Invalid option. Try again.")
+            print("*************************************************************")
 
 if __name__ == "__main__":
     main()
